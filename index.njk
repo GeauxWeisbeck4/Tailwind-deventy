@@ -4,11 +4,20 @@ eleventyNavigation:
   key: Home
   order: 1
 ---
+<div class="warning">
+  <h1 class="hero-header">Tailwind Devdude's</h1>
+  <h2 class="hero-sub">11ty Starter ~ Deventy</h2>
+  <a class="hero-button" href="/blog">Read Blog</a>
+  <a class="hero-altButton" href="/docs">Read Docs</a>
+</div>
+
+<div class="post-container">
 {% set maxPosts = collections.posts.length | min(3) %}
-<h1>Latest {% if maxPosts == 1 %}Post{% else %}{{ maxPosts }} Posts{% endif %}</h1>
+<h1 class="bottom-head">Latest {% if maxPosts == 1 %}Post{% else %}{{ maxPosts }} Posts{% endif %}</h1>
 
 {% set postslist = collections.posts | head(-3) %}
 {% set postslistCounter = collections.posts | length %}
 {% include "postslist.njk" %}
 
 <p>More posts can be found in <a href="{{ '/posts/' | url }}">the archive</a>.</p>
+</div>
